@@ -30,5 +30,26 @@ namespace TodoApi.Controllers
                 _context.SaveChanges();
             }
         }
+
+        // GET: api/employee
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
+        {
+            return await _context.Employees.ToListAsync();
+        }
+
+        // GET: api/employee/1
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Employee>> GetEmployee(int id)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return employee;
+        }
     }
 }
