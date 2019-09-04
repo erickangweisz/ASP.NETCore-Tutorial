@@ -51,5 +51,15 @@ namespace TodoApi.Controllers
 
             return employee;
         }
+
+        // POST: api/employee
+        [HttpPost]
+        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        {
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetEmployee), new { id = employee.Id }, employee);
+        }
     }
 }
