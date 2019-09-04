@@ -31,7 +31,7 @@ function getData() {
             getCount(data.length)
 
             $.each(data, (key, employee) => {
-                const tr = $("<td></tr>")
+                const tr = $("<tr></tr>")
                 .append($("<td></td>").text(employee.firstname))
                 .append($("<td></td>").text(employee.lastname))
                 .append($("<td></td>").text(employee.email))
@@ -97,6 +97,7 @@ function deleteEmployee(id) {
 function editEmployee(id) {
     $.each(employees, (key, employee) => {
         if (employee.id === id) {
+            $("#edit-id").val(employee.id)
             $("#edit-firstname").val(employee.firstname)
             $("#edit-lastname").val(employee.lastname)
             $("#edit-email").val(employee.email)
@@ -108,11 +109,11 @@ function editEmployee(id) {
 
 $(".edit-form").on("submit", () => {
     const employee = {
-        firstname: $("edit-firstname").val(),
-        lastname: $("edit-lastname").val(),
-        email: $("edit-email").val(),
-        cellphone: $("edit-cellphone").val(),
-        id: $("edit-id").val()
+        firstname: $("#edit-firstname").val(),
+        lastname: $("#edit-lastname").val(),
+        email: $("#edit-email").val(),
+        cellphone: $("#edit-cellphone").val(),
+        id: $("#edit-id").val()
     }
 
     $.ajax({
