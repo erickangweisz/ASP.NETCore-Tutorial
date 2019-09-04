@@ -2,9 +2,49 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Employee CRUD</title>
+    <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 <body>
+    <h1>Employee CRUD</h1>
+    <h3>Add</h3>
 
+    <form action="javascript:void(0);" method="POST" onsubmit="addEmployee()">
+        <input type="text" id="add-firstname" placeholder="Firstname">
+        <input type="text" id="add-lastname" placeholder="Lastname">
+        <input type="text" id="add-email" placeholder="Email">
+        <input type="text" id="add-cellphone" placeholder="Cellphone">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form class="edit-form">
+            <input type="hidden" id="edit-id" />
+            <input type="text" id="edit-firstname" />
+            <input type="text" id="edit-lastname" />
+            <input type="email" id="edit-email" />
+            <input type="number" id="edit-cellphone" />
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Cellphone</th>
+        </tr>
+        <tbody id="employees"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>
