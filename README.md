@@ -14,8 +14,5 @@
 
 - #### [Tutorial: ASP.Net Core with Dapper:](https://dotnetcorecentral.com/blog/asp-net-core-web-api-application-with-dapper-part-1/) :memo:
 
-  [![Part 1:](https://www.youtube.com/embed/F4faJc_mvII)
-  <br>
-
-  [![Part 2:](https://www.youtube.com/embed/f31p-TU4uV4)
-  <br>
+  - _Part 1_: [Create a Database and Integrate Dapper ORM.](https://www.youtube.com/watch?time_continue=3&v=F4faJc_mvII)
+  - _Part 2_: [Implement CRUD Methods with Dapper.](https://www.youtube.com/watch?v=f31p-TU4uV4)
