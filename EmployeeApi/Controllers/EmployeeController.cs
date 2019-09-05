@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EmployeeApi.Data.Models;
+using EmployeeApi.Service.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EmployeeApi.Service.Models;
 
 namespace TodoApi.Controllers
 {

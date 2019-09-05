@@ -1,4 +1,4 @@
-﻿using EmployeeApi.Data.Providers.Models;
+﻿using EmployeeApi.Data.Models;
 using System.Collections.Generic;
 
 namespace EmployeeApi.Data.Providers.Interfaces

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EmployeeApi.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeApi.Service.Models
 {

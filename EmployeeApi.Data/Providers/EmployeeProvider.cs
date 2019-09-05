@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using EmployeeApi.Data.Providers.Interfaces;
-using EmployeeApi.Data.Providers.Models;
+using EmployeeApi.Data.Models;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
