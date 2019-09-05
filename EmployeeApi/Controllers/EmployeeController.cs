@@ -1,4 +1,5 @@
 ﻿using EmployeeApi.Data.Models;
+using EmployeeApi.Data.Providers.Interfaces;
 using EmployeeApi.Service.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,20 @@ namespace TodoApi.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly EmployeeContext _context;
+        private readonly IEmployeeProvider employeeProvider;
+
+        public EmployeeController(IEmployeeProvider employeeProvider)
+        {
+            this.employeeProvider = employeeProvider;
+        }
+
+        // GET: api/employee
+        [HttpGet]
+        public IEnumerable<Employee> Get()
+        {
+            return employeeProvider.Get();
+        }
+        /*private readonly EmployeeContext _context;
 
         public EmployeeController(EmployeeContext context)
         {
@@ -93,6 +107,6 @@ namespace TodoApi.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
+        }*/
     }
 }

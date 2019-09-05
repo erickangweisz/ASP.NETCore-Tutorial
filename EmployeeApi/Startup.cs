@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using EmployeeApi.Service.Models;
+using EmployeeApi.Data.Providers.Interfaces;
+using EmployeeApi.Data.Providers;
 
 namespace EmployeeApi
 {
@@ -20,9 +22,13 @@ namespace EmployeeApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EmployeeContext>(opt =>
-                opt.UseInMemoryDatabase("EmployeeList"));
+            /*services.AddDbContext<EmployeeContext>(opt =>
+                opt.UseInMemoryDatabase("EmployeeList"));*/
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // TODO: Create config.xml and add Initial Catalog and server value and add it into .gitignore
+            services.AddTransient<IEmployeeProvider>(f => 
+                new EmployeeProvider(@"Persist Security Info = false; Integrated Security = true; Initial Catalog = EmployeeDB; server = DESKTOP-UHSRDD1"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
