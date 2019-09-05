@@ -21,7 +21,7 @@ namespace EmployeeApi.Data.Providers
 
             using (var connection = new SqlConnection(connectionString))
             {
-                employee = connection.Query<Employee>("select * from ");
+                employee = connection.Query<Employee>("select * from Employee");
             }
 
             return employee;
