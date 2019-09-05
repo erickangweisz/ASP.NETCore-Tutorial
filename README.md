@@ -15,10 +15,8 @@
 - #### [Tutorial: ASP.Net Core with Dapper:](https://dotnetcorecentral.com/blog/asp-net-core-web-api-application-with-dapper-part-1/) :memo:
 
   - Part 1:
-  <iframe width="560" height="315" 
-  src="https://www.youtube.com/embed/F4faJc_mvII" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/F4faJc_mvII" frameborder="0" allowfullscreen></iframe>
   <br>
 
   - Part 2:
-  <iframe width="560" height="315" 
-  src="https://www.youtube.com/embed/f31p-TU4uV4" frameborder="0" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/f31p-TU4uV4" frameborder="0" allowfullscreen></iframe>
