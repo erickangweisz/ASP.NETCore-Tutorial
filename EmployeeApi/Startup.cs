@@ -22,9 +22,10 @@ namespace EmployeeApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // TODO: Create config.xml and add Initial Catalog and server value and add it into .gitignore
-            services.AddTransient<IEmployeeProvider>(f =>
-                new EmployeeProvider(@"Persist Security Info = false; Integrated Security = true; Initial Catalog = EmployeeDB; Server = DESKTOP-UHSRDD1"));
+            var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true);
+            var config = builder.Build();
+            
+            services.AddTransient<IEmployeeProvider>(f => new EmployeeProvider(config["ConnectionString:EmployeeDB"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
