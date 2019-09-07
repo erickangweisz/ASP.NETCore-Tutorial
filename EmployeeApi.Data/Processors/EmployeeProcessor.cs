@@ -5,7 +5,7 @@ using EmployeeApi.Data.Models;
 
 namespace EmployeeApi.Data.Processors
 {
-    public class EmployeeProcessor : IEmployeeMProcessor
+    public class EmployeeProcessor : IEmployeeProcessor
     {
         private readonly string connectionString;
 

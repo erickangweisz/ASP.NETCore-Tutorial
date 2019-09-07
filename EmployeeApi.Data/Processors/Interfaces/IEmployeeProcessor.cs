@@ -2,7 +2,7 @@
 
 namespace EmployeeApi.Data
 {
-    public interface IEmployeeMProcessor
+    public interface IEmployeeProcessor
     {
         void Create(Employee employee);
 
