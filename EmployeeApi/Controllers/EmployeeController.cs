@@ -40,5 +40,12 @@ namespace TodoApi.Controllers
             employee.Id = id;
             employeeProcessor.Update(employee);
         }
+
+        // DELETE: api/employee/1
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            employeeProcessor.Delete(id);
+        }
     }
 }
