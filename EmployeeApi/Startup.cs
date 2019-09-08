@@ -26,7 +26,7 @@ namespace EmployeeApi
 
             var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true);
             var config = builder.Build();
-            
+
             services.AddTransient<IEmployeeProvider>(f => new EmployeeProvider(config["ConnectionString:EmployeeDB"]));
             services.AddTransient<IEmployeeProcessor>(f => new EmployeeProcessor(config["ConnectionString:EmployeeDB"]));
         }
