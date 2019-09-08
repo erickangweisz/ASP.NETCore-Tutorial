@@ -1,7 +1,6 @@
-﻿using System;
-using System.Data.SqlClient;
-using Dapper;
+﻿using Dapper;
 using EmployeeApi.Data.Models;
+using System.Data.SqlClient;
 
 namespace EmployeeApi.Data.Processors
 {
