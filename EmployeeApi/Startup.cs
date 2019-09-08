@@ -1,4 +1,6 @@
-﻿using EmployeeApi.Data.Providers;
+﻿using EmployeeApi.Data;
+using EmployeeApi.Data.Processors;
+using EmployeeApi.Data.Providers;
 using EmployeeApi.Data.Providers.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +28,7 @@ namespace EmployeeApi
             var config = builder.Build();
             
             services.AddTransient<IEmployeeProvider>(f => new EmployeeProvider(config["ConnectionString:EmployeeDB"]));
+            services.AddTransient<IEmployeeProcessor>(f => new EmployeeProcessor(config["ConnectionString:EmployeeDB"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
