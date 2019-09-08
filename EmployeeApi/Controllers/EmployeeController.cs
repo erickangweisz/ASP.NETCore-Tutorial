@@ -32,5 +32,13 @@ namespace TodoApi.Controllers
         {
             employeeProcessor.Create(employee);
         }
+
+        // PUT: api/employee/1
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]Employee employee)
+        {
+            employee.Id = id;
+            employeeProcessor.Update(employee);
+        }
     }
 }

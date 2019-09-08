@@ -23,12 +23,16 @@ namespace EmployeeApi.Data.Processors
             }
         }
 
-        public void Delete(int employeeId)
+        public void Update(Employee employee)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Execute("UPDATE Employee SET firstname=@Firstname, lastname=@Lastname, email=@Email, cellphone=@Cellphone WHERE id=@Id",
+                    new { employee.Id, employee.Firstname, employee.Lastname, employee.Email, employee.Cellphone });
+            }
         }
 
-        public void Update(Employee employee)
+        public void Delete(int employeeId)
         {
             throw new NotImplementedException();
         }
