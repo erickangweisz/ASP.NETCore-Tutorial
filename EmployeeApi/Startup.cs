@@ -29,6 +29,15 @@ namespace EmployeeApi
 
             services.AddTransient<IEmployeeProvider>(f => new EmployeeProvider(config["ConnectionString:EmployeeDB"]));
             services.AddTransient<IEmployeeProcessor>(f => new EmployeeProcessor(config["ConnectionString:EmployeeDB"]));
+
+            // Enable CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("EnableCORS", corsbuilder =>
+                {
+                    corsbuilder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials().Build();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +53,7 @@ namespace EmployeeApi
                 app.UseHsts();
             }
 
+            app.UseCors("EnableCORS");
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseHttpsRedirection();
