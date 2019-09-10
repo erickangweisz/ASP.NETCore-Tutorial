@@ -16,3 +16,6 @@
 
   - _Part 1_: [Create a Database and Integrate Dapper ORM.](https://www.youtube.com/watch?time_continue=3&v=F4faJc_mvII) :movie_camera:
   - _Part 2_: [Implement CRUD Methods with Dapper.](https://www.youtube.com/watch?v=f31p-TU4uV4) :movie_camera:
+
+- #### [Enable CORS.]()
+   - Enabling CORS: [For have the capability to consume this API in applications that are hosted on different domains](https://www.youtube.com/watch?v=KolCWRIQyoA) :movie_camera:
