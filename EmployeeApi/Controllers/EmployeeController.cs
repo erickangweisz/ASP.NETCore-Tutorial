@@ -15,7 +15,6 @@ namespace TodoApi.Controllers
 
         public EmployeeController(IEmployeeProcessor employeeProcessor)
         {
-            //this.employeeProvider = employeeProvider;
             this.employeeProcessor = employeeProcessor;
         }
 
