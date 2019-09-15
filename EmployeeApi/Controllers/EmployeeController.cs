@@ -1,8 +1,8 @@
 ﻿using EmployeeApi.Data;
 using EmployeeApi.Data.Models;
-using EmployeeApi.Data.Providers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace TodoApi.Controllers
 {
@@ -10,12 +10,12 @@ namespace TodoApi.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        private readonly IEmployeeProvider employeeProvider;
+        //private readonly IEmployeeProvider employeeProvider;
         private readonly IEmployeeProcessor employeeProcessor;
 
-        public EmployeeController(IEmployeeProvider employeeProvider, IEmployeeProcessor employeeProcessor)
+        public EmployeeController(IEmployeeProcessor employeeProcessor)
         {
-            this.employeeProvider = employeeProvider;
+            //this.employeeProvider = employeeProvider;
             this.employeeProcessor = employeeProcessor;
         }
 
@@ -23,14 +23,15 @@ namespace TodoApi.Controllers
         [HttpGet]
         public IEnumerable<Employee> Get()
         {
-            return employeeProvider.Get();
+            return employeeProcessor.Get();
         }
 
         // POST: api/employee
         [HttpPost]
-        public void Post([FromBody]Employee employee)
+        public async Task<IActionResult> Post([FromBody]Employee employee)
         {
             employeeProcessor.Create(employee);
+            return Ok(employee);
         }
 
         // PUT: api/employee/1

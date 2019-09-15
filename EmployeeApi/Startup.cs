@@ -1,7 +1,5 @@
 ﻿using EmployeeApi.Data;
 using EmployeeApi.Data.Processors;
-using EmployeeApi.Data.Providers;
-using EmployeeApi.Data.Providers.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +25,6 @@ namespace EmployeeApi
             var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", false, true);
             var config = builder.Build();
 
-            services.AddTransient<IEmployeeProvider>(f => new EmployeeProvider(config["ConnectionString:EmployeeDB"]));
             services.AddTransient<IEmployeeProcessor>(f => new EmployeeProcessor(config["ConnectionString:EmployeeDB"]));
 
             // Enable CORS

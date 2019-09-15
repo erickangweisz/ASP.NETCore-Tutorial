@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using EmployeeApi.Data.Models;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace EmployeeApi.Data.Processors
@@ -20,6 +21,18 @@ namespace EmployeeApi.Data.Processors
                 connection.Execute("INSERT INTO Employee (firstname, lastname, email, cellphone) VALUES (@Firstname, @Lastname, @Email, @Cellphone)",
                     new { employee.Firstname, employee.Lastname, employee.Email, employee.Cellphone });
             }
+        }
+
+        public IEnumerable<Employee> Get()
+        {
+            IEnumerable<Employee> employee = null;
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                employee = connection.Query<Employee>("SELECT * FROM Employee");
+            }
+
+            return employee;
         }
 
         public void Update(Employee employee)
