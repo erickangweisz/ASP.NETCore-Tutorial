@@ -10,7 +10,6 @@ namespace TodoApi.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        //private readonly IEmployeeProvider employeeProvider;
         private readonly IEmployeeProcessor employeeProcessor;
 
         public EmployeeController(IEmployeeProcessor employeeProcessor)
